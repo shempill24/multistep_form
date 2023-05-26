@@ -1,0 +1,453 @@
+@font-face {
+    font-family: Ubuntu-Bold;
+    src: url(/assets/fonts/Ubuntu-Bold.ttf);
+}
+@font-face {
+    font-family: Ubuntu-med;
+    src: url(/assets/fonts/Ubuntu-Medium.ttf);
+}
+@font-face {
+    font-family: Ubuntu-REG;
+    src: url(/assets/fonts/Ubuntu-Regular.ttf);
+}
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    padding: 15px;
+    font-size: 16px;
+    font-family: ubuntu-reg;
+    background-color: rgb(227, 234, 241);
+}
+main{
+    background-color: white;
+    display: grid;
+    grid-template-columns:1fr 2fr ;
+    padding:20px;
+    border-radius: 15px;
+    width: 1200px;
+}
+
+/* SIDEBAR */
+.sidebar{
+    background-image: url(/assets/images/bg-sidebar-desktop.svg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    height: 750px;
+    width: 350px;
+    padding: 25px;
+    border-radius: 15px;
+}
+.sidebar_element{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    padding: 5px;
+    font-family: ubuntu-reg;
+    margin: 10px;
+
+}
+.circle_element, .circle_element2, .circle_element3, .circle_element4
+{
+    color: hsl(231, 100%, 99%);
+    height: 35px;
+    width: 35px;
+    font-size: smaller;
+    border: white solid .5px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.circle_current{
+    background-color: hsl(206, 94%, 87%);
+    color:hsl(213, 96%, 18%);
+}
+.sidebar_copy{
+    text-transform:uppercase;
+    color:  hsl(231, 100%, 99%);
+    margin-left: 15px;
+}
+.copy_top{
+    color: hsl(231, 11%, 63%);
+    margin-bottom: 2px;
+
+}
+.copy_bottom{
+
+    font-family: ubuntu-med;
+}
+.right{
+    padding: 45px;
+    padding-right: 90px;
+    padding-left: 50px;
+    position: relative;
+    overflow: hidden; 
+
+}
+/* buttons */
+.back{
+    padding: 12px;
+    color: hsl(213, 96%, 18%);
+    border-style: none;
+    cursor:pointer;
+    position: absolute;
+    width:120px;
+    font-family: ubuntu-med;
+    bottom: 50px;
+    left:0;
+
+
+}
+
+.next{
+    padding: 20px;
+    color: rgb(247, 247, 247);
+    background-color: hsl(213, 96%, 18%);
+    border-radius: 10px;
+    border-style: none;
+    cursor:pointer;
+    position: absolute;
+    width:140px;
+    font-family: ubuntu-med;
+    bottom: 50px;
+    right:0;
+    font-size: 18px;
+    text-align: center;
+}
+#confirm{
+    display: none;
+    padding: 15px;
+    color: rgb(247, 247, 247);
+    background-color: hsl(213, 96%, 18%);
+    border-radius: 10px;
+    border-style: none;
+    cursor:pointer;
+    position: absolute;
+    width:140px;
+    font-family: ubuntu-med;
+    bottom: 30px;
+    right:0;
+    font-size: 18px;
+    text-align: center;
+}
+/* CARDS */
+
+
+.step_card{
+    display: flex;
+    width: 600px;
+    height: 700px;
+    flex-direction: column;
+    border-style: none;
+    position: relative;
+    position: absolute;
+    transition: all 0.5s;    
+
+
+
+}
+.card_header{
+    font-family: ubuntu-bold;
+    font-size: 1.75em;
+    padding-bottom: 10px;
+}
+.header_caption{
+    color: rgb(144, 144, 144);
+    padding-bottom: 50px;
+}
+
+/* Card 1 */
+label{
+    display: block;
+    font-size: .85em;
+    margin-bottom: 8px;
+}
+input{
+    width: 100%;
+    height: 60px;
+    color: darkblue;
+    border: solid lightgrey;
+    border-radius: 10px;
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+
+
+/* Card 2 */
+
+.card_row{
+    display: flex;
+    justify-content: space-between;
+}
+.plan_card{
+    border: solid lightgray;
+    border-radius: 10px;
+
+    width: 180px;
+    padding: 15px;
+    font-size: 20px;
+}
+.plan_card img{
+    height: 50px;
+}
+.plan_card:hover{
+    border-color:hsl(243, 100%, 62%) ;
+}
+.select_plan{
+    background-color:hsl(231, 100%, 99%) ;
+    border-color:hsl(243, 100%, 62%) ;
+}
+.select_toggle{
+    font-family: ubuntu-bold;
+    color: hsl(213, 96%, 18%);
+}
+.plan_copy{
+    
+    margin-top: 70px;
+}
+.plan_copy_top{
+    font-family: ubuntu-med;
+}
+.plan_copy_bottom{
+    color: rgb(192, 191, 191);
+}
+.toggle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(231, 100%, 99%);
+    margin-top: 35px;
+    border-radius: 10px;
+}
+.toggle_copy{
+    padding: 25px;
+    font-size: 18px;
+
+}
+/* Slider */
+.switch{
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 24px;
+}
+.display_none{
+    display: none;
+}
+.switch input{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: hsl(213, 96%, 18%);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+.slider:before{
+    position: absolute;
+    content:"";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition:.4s;
+}
+input:checked + .slider{
+    background-color: hsl(213, 96%, 18%);
+
+}
+input:focus + .slider{
+    box-shadow: 0 0 1px hsl(213, 96%, 18%);
+}
+input:checked + .slider::before{
+    -webkit-transform: translateX(35px);
+    -ms-transform: translateX(35px);
+    transform: translateX(35px);
+}
+.slider.round{
+    border-radius: 34px;
+
+}
+.slider.round:before{
+    border-radius: 50%;
+}
+/* Card 3 */
+.addon_card{
+    width: 100%;
+    border: solid .5px;
+    border-radius: 15px;
+    margin: 15px 0;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+}
+.card_copy_top{
+font-family: ubuntu-bold;
+}
+.checkbox{    width: 20px;
+    margin-top: 15px;
+    margin-left: 15px;
+
+}
+/* Card 5 */
+#center_flex{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+#thank_img{
+    width: 90px;
+}
+.thank_header{
+    font-size: 40px;
+    padding: 30px 0;
+}
+.thank{
+    padding: 5px 65px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.5;
+}
+@media only screen and (max-width:1200px) {
+    body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 0px;
+
+    }
+    main{
+        background-color:hsl(217, 100%, 97%);
+        display: flex;
+        flex-direction: column;
+        padding:0px;
+        border-radius: 0px;
+        width: 100%;
+        height: 100%;
+    }
+    
+    /* SIDEBAR */
+    .sidebar{
+        background-image: url(/assets/images/bg-sidebar-mobile.svg);
+        background-repeat: no-repeat;
+        background-size:cover;
+        height: 200px;
+        width: 100%;
+        padding: 25px;
+        border-radius: 0px;
+        display: flex;
+        justify-content: center;
+        z-index: 1;
+    }
+    .sidebar_element{
+        display: flex;
+        padding: 0px;
+        font-family: ubuntu-reg;
+        margin: 10px;
+    
+    }
+    .circle_element{
+        color: hsl(231, 100%, 99%);
+        height: 35px;
+        width: 35px;
+        font-size: 20px;
+        padding: 20px;
+        border: white solid .5px;
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
+    }
+
+    .sidebar_copy{
+        display: none;
+}
+    .right{
+        display: flex;
+        flex-direction: column;
+        margin-top: -80px;
+        width: 100vw;
+        height: 100%;
+        border: solid;
+        padding: 45px;
+        padding-right: 20px;
+        padding-left: 20px;
+        position: relative;
+        overflow: hidden; 
+
+}
+    .step_card{
+        background-color: white;
+        z-index: 30;
+        margin: -40px 0px 0 10px;
+        border-radius: 25px;
+        padding: 30px;
+        width: 90%;
+        height: 550px;
+
+
+
+}
+#center_flex{
+    width: 90%;
+}   
+.div_nav_button{
+    width: 150%;
+    height: 800px;
+    background-color: white;
+    margin-top: 750px;
+    margin-left: -30px;
+    margin-bottom: -30px;
+    position:static;
+}
+.back{
+    padding: 12px;
+    color: hsl(213, 96%, 18%);
+    border-style: none;
+    cursor:pointer;
+    position: absolute;
+    width:120px;
+    font-family: ubuntu-med;
+    bottom: 50px;
+    left:0;
+    font-size: 0;
+
+
+}
+.last{
+    border: solid;
+    margin-bottom: -150px;
+}
+.next{
+    bottom: 50px;
+    right: 60px;
+
+}
+#confirm{
+    right: 60px;
+}
+}

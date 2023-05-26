@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="./style.css">
+  <title>Frontend Mentor | Multi-step form</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+  <link href="/style.css" rel="stylesheet">
+</head>
+<body>
+<main>
+  <!-- Sidebar start -->
+<section class="sidebar">
+  <div class="sidebar_element">
+    <div class="circle_element circle_current" id="circle1">1</div>    
+    <div class="sidebar_copy">
+    <div class="copy_top">Step 1</div>  
+    <div class="copy_bottom">Your info</div>
+  </div>
+  </div>
+  <div class="sidebar_element">
+    <div class="circle_element"id="circle2" >2</div>    
+    <div class="sidebar_copy">
+      <div class="copy_top">Step 3</div>  
+      <div class="copy_bottom">Add-ons</div> 
+    </div>
+  </div>
+  <div class="sidebar_element">
+    <div class="circle_element"id="circle3">3</div> 
+    <div class="sidebar_copy">
+      <div class="copy_top">Step 3</div>  
+      <div class="copy_bottom">Add-ons</div> 
+    </div>
+  </div>
+  <div class="sidebar_element"> 
+    <div class="circle_element"id="circle4">4</div>    
+    <div class="sidebar_copy">  <div class="copy_top">Step 4</div>  
+    <div class="copy_bottom">Summary</div></div>
+   </div>
+
+</section>
+  <!-- Sidebar end -->
+
+  <!-- Step 1 start -->
+<section class="right">  
+<div class="step_card">
+  <div class="card_header">Personal info</div>
+  <div class="header_caption"> Please provide your name, email address, and phone number.</div>
+  <div>
+  <label for="name">Name</label>
+  <input type="text" required id="name" placeholder= "e.g. Stephen King">
+
+  <label for="email">Email Address</label>
+  <input type="email" id="email" required placeholder="stephenking@lorem.com">
+
+  <label for="tel">Phone Number</label>
+  <input type="tel" id="tel" required placeholder="+1 234 567 890">
+</div>
+</div>
+<div class="div_nav_button">
+  <a class="back" style="display: none;">Go Back</a>
+  <a class="next" type="button" value="" onclick="changeCircle">Next Step</a>
+</div>
+  <!-- Step 1 end -->
+
+  <!-- Step 2 start -->
+<div class="step_card">
+  <div class="card_header">Select your plan</div>
+  <div class="header_caption">You have the option of monthly or yearly billing.</div>
+  <div class="card_row">
+  <div class="plan_card">
+    <img src="/assets/images/icon-arcade.svg">
+    <div class="plan_copy">
+      <div class="plan_copy_top">Arcade</div>
+      <div class="plan_copy_bottom monthly">$9/mo</div>
+      <div class="plan_copy_bottom yearly display_none">$90/yr</div>
+      <div class="plan_copy_bottom_sale yearly display_none">2 months free</div>
+    </div>
+  </div>
+  <div class="plan_card">
+    <img src="/assets/images/icon-advanced.svg">
+    <div class="plan_copy">
+    <div class="plan_copy_top">Advanced</div>
+    <div class="plan_copy_bottom monthly">$12/mo</div>
+    <div class="plan_copy_bottom yearly display_none">$120/yr</div>
+    <div class="plan_copy_bottom_sale yearly display_none">2 months free</div>
+  </div>
+</div>
+  <div class="plan_card select_plan">
+    <img src="/assets/images/icon-pro.svg">
+    <div class="plan_copy">
+    <div class="plan_copy_top">Pro</div>
+    <div class="plan_copy_bottom monthly">$15/mo</div>
+    <div class="plan_copy_bottom yearly display_none">$150/yr</div>
+    <div class="plan_copy_bottom_sale yearly display_none">2 months free</div>
+  </div>
+</div>
+  </div>
+  <div class="toggle">
+    <div class="toggle_copy">
+    Monthly</div>
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider round">
+
+      </span>
+    </label>
+    <div class="toggle_copy select_toggle">
+      Yearly</div>
+  </div>
+</div>
+ 
+
+  <!-- Step 2 end -->
+
+  <!-- Step 3 start -->
+  <div class="step_card">
+    <div class="card_header">Pick add-ons</div>
+  <div class="header_caption">Add-ons help enhance your gaming experience.</div>
+<div class="addon_card">
+  <input class="checkbox" type="checkbox">
+  <div>
+  <div class="card_copy_top"> Online service</div>
+  <div class="card_copy_bottom">Access to multiplayer games</div>
+</div>
+<div class="card_cost">
+  +$1/mo
+</div>
+ 
+  
+
+</div>
+<div class="addon_card">
+  <input class="checkbox" type="checkbox">
+  <div>
+  <div class="card_copy_top">Larger storage</div>
+  <div class="card_copy_bottom">Extra 1TB of cloud save</div>
+</div>
+<div class="card_cost">
+  +$2/mo
+</div>
+</div>
+<div class="addon_card">
+  <input class="checkbox" type="checkbox">
+  <div>
+  <div class="card_copy_top">Customizable Profile</div>
+  <div class="card_copy_bottom"> Custom theme on your profile</div>
+</div>
+<div class="card_cost">
+  +$2/mo
+</div>
+ 
+</div>  
+</div>
+  <!-- Step 3 end -->
+
+  <!-- Step 4 start -->
+<div class="step_card">
+  <div class="card_header">Finishing up</div>
+  <div class="header_caption">Double everything looks OK before confirming.</div>
+  <div>
+
+  </div>
+  <!-- Dynamically add subscription and add-on selections here -->
+  <div>
+  Total (per month/year)
+  </div>
+</div>
+<div class="last">
+  <input id="confirm" type="button" value="Confirm">
+
+</div>
+  <!-- Step 4 end -->
+
+  <!-- Step 5 start -->
+<div class="step_card" id="center_flex">
+    <img id="thank_img"src="/assets/images/icon-thank-you.svg">
+    <div class="card_header thank_header">Thank you!</div> 
+    
+<div class="header_caption thank">
+  Thanks for confirming your subscription! We hope you have fun 
+  using our platform. If you ever need support, please feel free 
+  to email us at support@loremgaming.com.
+</div>
+</div>
+  <!-- Step 5 end -->
+</section>  
+</main>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">shempill24</a>.
+  </div>
+  <script src="js.js"></script>
+</body>
+</html>
